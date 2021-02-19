@@ -1,0 +1,551 @@
+import sys      #import system module
+
+import time     #delay time
+print ("'Berlioz - Symphonie Fantastique' playing in the background...")   #introduction
+print ("")
+time.sleep (.7)
+print ("The Curtis Institute is the finest music conservatory in the world.")
+print ("")
+time.sleep (.7)
+print ("The most talented musicians’ developments for performance careers at the very highest level can be seen in the many major orchestras that have Curtis graduates among their section chairs.")
+print ("")
+time.sleep (.7)
+print ("It is very, very difficult to get in and only the most gifted musicians in the world gain a place.")
+print ("")
+time.sleep (.7)
+name = input ("Dear musician, please enter your name: ")
+print ("")
+time.sleep (2)
+print ("Congratulations! You are accepted into the Curtis Institute,",name,"!")
+print ("")
+time.sleep (.7)
+
+
+
+def inputNumber (message):          #a function that helps with every single function that needs the player to enter an integer to run
+    while True:
+        try:
+            userInput = int (input(message))
+        except ValueError:
+            print ("Not an integer! Try again.")
+            continue
+        else:
+            return userInput
+            break
+
+        
+def come ():        #define a new function for "choose == 1"
+    while True:
+        come = inputNumber ("Are you going to accompany Pierre? 1-yes; 2-no: ")
+        print ("")
+        if come == 1:
+            print ("You've done a great job accompanying Pierre--you both get the championship!")
+            print ("")
+            print ("After this competition, Pierre asks you out and you become partners for every single competition...")
+            print ("")
+            print ("...six years later, after winning the International Tchaikovsky Competition, Pierre proposed to you...")
+            print ("")
+            print ("You lived a beautiful and peaceful life with one of the greatest cellists in the world,",name,". Good game!")
+            print ("")
+            break
+        elif come == 2:
+            print ("You reject to accompany Pierre because of your working preferences...for a certain period of time, you don't accompany other players.")
+            print ("")
+            print ("Maybe it's good for you to work alone, but you missed an important competition...you become a soloist after that.")
+            print ("")
+            print ("*Many years later, you come back to Curtis for a visit...")
+            print ("")
+            m()
+            break
+
+
+def c ():           #a new function for "choice == 3"
+    while True:
+        c = inputNumber ("Which piece are you playing for the competition? 1-Butterfly Lovers Concerto; 2-The Violin Concerto No. 1, Op. 6: ")
+        print ("")
+        if c == 1:
+            print ("It's very wise of you to choose Butterfly Lovers Concerto. Half of the judges happen to be Chinese, and they love your music.")
+            print ("")
+            print ("You are the lucky one here,",name,"! You are soon invited to Shanghai Isaac Stern International Violin Competition.")
+            print ("*Seventeen years later...")
+            print ("")
+            print ("Congratulations! You are invited to work with Central Conservatory of Music in Beijing, China, one of the best conservatories.")
+            print ("")
+            time.sleep(.5)
+            print ("*After a while, you decide to visit Beijing for relaxation.")
+            print ("")
+            BJ ()
+            break
+        elif c == 2:
+            print ("You have chosen one of the hardest piece composed by Paganini...you lose the competition badly because of the tough music...")
+            print ("")
+            print ("...for a certain period of time, people would not like you to be in their chamber music group...")
+            print ("")
+            print ("You believe in yourself and work harder than ever for the next few years...")
+            print ("")
+            print ("*Several years after your degree in performance, you found interest in music theory and you choose to stay in Curtis for study purpose.")
+            print ("")
+            print ("*After a while, you decide to visit Beijing for relaxation.")
+            print ("")
+            BJ ()
+            break
+
+def BJ ():          #for "c == 1" and "c == 2"
+    while True:
+        BJ = inputNumber ("You choose to go to: 1-Great Wall of China; 2-Forbidden City; 3-Summer Palace: ")
+        if BJ == 1:
+            print ("The Great Wall of China is an ancient series of walls and fortifications, totaling more than 13,000 miles in length...")
+            print ("")
+            print ("You have a good taste in historical attractions!")
+            print ("")
+            BG (Yattack1,Yattack2,Yattack3, YHp, HHp, Hattack)
+        elif BJ == 2:
+            print ("The Forbidden City was the former Chinese imperial palace from the Ming dynasty to the end of the Qing dynasty...")
+            print ("")
+            print ("You have a good taste in historical attractions!")
+            print ("")
+            BG (Yattack1,Yattack2,Yattack3, YHp, HHp, Hattack)
+        elif BJ == 3:
+            print ("The Summer Palace was an imperial garden in the Qing dynasty ,which  was mainly dominated by Longevity Hill and Kunming Lake...")
+            print ("")
+            print ("You have a good taste in historical attractions!")
+            print ("")
+            BG (Yattack1,Yattack2,Yattack3, YHp, HHp, Hattack)
+#--------------------------------------------------------------------
+def sta (YHp, HHp):
+    print ("Your Hp:",YHp)
+    print ("Zombie's Hp:", HHp)
+#--------------------------------------------------------------------
+Yattack1 = 8
+Yattack2 = 5
+Yattack3 = 7
+YHp = 30
+
+HHp = 25
+Hattack = 5.99
+#--------------------------------------------------------------------
+def BG (Yattack1,Yattack2,Yattack3, YHp, HHp, Hattack):
+    print ("On your way to the attractions, you feel a sense of danger...")
+    print ("")
+    print ("It's a zombie coming out from nowhere, playing the Eighteen Beat of Wu Gier on a Guqin(a seven-stringed plucked Chinese instrument).")
+    print ("")
+    print ("It is said that the song was composed by Cai Wenji.")
+    print ("")
+    print ("The song is used to express Wenji’s homesickness, the misery of separating from her son and her formidable complaints.")
+    print ("")
+    print ("*A selection of Chinese instruments is right in front of you...")
+    while HHp>0:
+        h = inputNumber ("You choose to play: 0-run; 1-the Moon over the Han Palace (Erhu); 2-Ambush on All Sides (Pipa); 3-The Spring Snow (Guqin): ")
+        print ("")
+        if h == 0:
+            print ("You are attacked!")
+            print ("")
+            YHp = YHp-Hattack*2
+            HHp = HHp
+            sta (YHp, HHp)
+            
+        if h == 1 :
+            print ("You are fighting the zombie!")
+            print ("")
+            YHp = YHp-Hattack
+            HHp = HHp-Yattack1
+            sta (YHp, HHp)
+
+        elif h == 2:
+            print ("You are fighting the zombie!")
+            print ("")
+            HHp = HHp-Yattack2
+            YHp = YHp-Hattack
+            sta (YHp, HHp)
+        elif h == 3:
+            print ("You are fighting the zombie!")
+            print ("")
+            HHp = HHp-Yattack3
+            YHp = YHp-Hattack
+            sta (YHp, HHp)
+
+        if YHp <= 0:
+            print ("You died ( ｰ̀дｰ́ )")
+            print ("")
+            print ("Your soul is going to accompany the zombie for some time - a decade, or maybe forever...")
+            sys.exit()
+
+        elif HHp <= 0:
+            print ("You defeated the zombie! You have also proved your ability in Chinese classical music.")
+            print ("")
+            print ("You may end your visit and live a better life from now on,",name,".")
+            sys.exit()
+
+
+#--------------------------------------------------------------------
+
+
+def choose ():          #a new function for "letter == 1"
+    while True:
+        choose = inputNumber ("Are you coming or not? 1-come to the show; 2-ignore the message: ")
+        print ("")
+        if choose == 1:
+            print ("After the show, Pierre tells you how he feels about you. He invites you to accompany him for Pennsylvania Competition.")
+            print ("")
+            come ()
+            sys.exit()          #exit system; break every single loop
+        elif choose == 2:
+            print ("You throw the letter away and go back to practice...your life is the same for the rest of your bachelor's...")
+            print ("")
+            print ("*Fifteen years have passed...the 33-year-old you work as a kindergarten music instructor in Detroit...")
+            print ("")
+            sys.exit()
+
+
+def m ():           #a new function for "t == 2"
+    while True:
+        m = inputNumber ("As you walk around, you choose to: 1-play music in the side practice room; 2-take a look at Gould Rehearsal Hall: ")
+        print ("")
+        if m == 1:
+            print ("You found the room where you spent your four years at. You walk in and start playing classical music.")
+            print ("")
+            print ("While you play, the atmosphere reminds you of Joseph Haydn, whose work has tortured you the most.")
+            print ("")
+            print ("'Oh, Symphony No. 94 is lame,', you finally get to say this out loud.")
+            print ("")
+            print ("*Suddenly you can hear Symphony No. 93 in D major playing from nowhere...Haydn's ghost appears in front of you...")
+            print ("")
+            h (Yattack, YHp, HHp, Hattack)
+            sys.exit()
+        elif m == 2:
+            print ("The concert in Gould Rehearsal Hall reminds you of Symphony No. 9 by Schubert (the one that is almost impossible to play).")
+            print ("")
+            print ("When the crowd is enjoying the music, you see Schubert's ghost conducting the orchestra.")
+            print ("")
+            fear (YRattack, YRHP, SHp, Sattack)
+            sys.exit ()
+            
+            
+#---------setting for player and enemy Haydn--------------
+Yattack = 5
+YHp = 26
+HHp = 18
+Hattack = 5
+#---------display player's stats--------------------------         
+def sta (YHp, HHp):
+    print ("Your Hp:",YHp)
+    print ("Enemy's Hp:", HHp)
+#---------------------------------------------------------    
+def h (Yattack, YHp, HHp, Hattack):           #a new function for "m == 1"
+    while HHp>0:
+        h = inputNumber ("Are you going to: 1-run; 2-play your part in the twelve London symphonies: ")
+        print ("")
+        if h == 1 :
+            print ("Oops, you are attacked!")
+            print ("")
+            YHp = YHp-Hattack
+            sta (YHp, HHp)
+
+        elif h == 2:
+            print ("You are fighting Haydn!")
+            print ("")
+            HHp = HHp-Yattack
+            YHp = YHp-Hattack
+            sta (YHp, HHp)
+
+        if YHp <= 0:
+            print ("You died ( ｰ̀дｰ́ )")
+            print ("")
+            print ("Your soul is going to accompany Joseph Haydn(your least favourite composer) for some time - a decade, or maybe forever...")
+            sys.exit()
+
+        elif HHp <= 0:
+            print ("You defeated Joseph Haydn! You have also conquered your worst fear in your music career.")
+            print ("")
+            print ("You may end your visit and live a better life from now on,",name,".")
+            sys.exit()
+#---------------------------------------------------------------
+YRattack = 6
+YRHP = 24
+SHp = 18
+Sattack = 6
+#---------------------------------------------------------------
+def data (YRHp, SHp):
+    print ("Your Hp:",YRHp)
+    print ("Schubert's Hp:", SHp)
+#---------------------------------------------------------------
+                    
+def fear (YRattack, YRHP, SHp, Sattack):            #a new function for "m == 2"
+    while True:
+        fear = inputNumber ("Despite of your fear, you choose to: 1-sneak away from the hall; 2-come up to the front and conduct: ")
+        if fear == 1 :
+            print ("Oops, you are attacked!")
+            print ("")
+            YRHp = YRHp-Sattack
+            data (YRHp, SHp)
+
+        elif fear == 2:
+            print ("You are fighting Schubert!")
+            print ("")
+            HHp = HHp-Yattack
+            YHp = YHp-Hattack
+            data (YRHp, SHp)
+
+        if YRHp <= 0:
+            print ("You died (ノへ`、)")
+            print ("")
+            print ("Your soul is going to accompany Schubert(your least favourite composer) for some time - a decade, or maybe forever...")
+            sys.exit()
+
+        elif SHp <= 0:
+            print ("You defeated Schubert! You have also conquered your worst fear in your music career.")
+            print ("")
+            print ("You may end your visit and live a better life from now on,",name,".")
+            sys.exit()
+        
+#---------------------------------------------------------------
+def t ():           #a new function for "letter == 2"
+    while True:
+        t = inputNumber ("After a good rest from yesterday night, you want a change of mood: 1-see your parents; 2-go to Philadelphia Orchestra's concert: ")
+        print ("")
+        if t == 1:
+            print ("Your parents are glad to see you,",name,". You share a great weekend together...")
+            print ("")
+            print ("Remember to come back in time! School doesn't wait!")
+            print ("")
+            print ("*You keep the habit of going home after concerts...you get your bachelor's degree successfully in a good mood.")
+            print ("")
+            print ("*Many years later, you go back to Curtis for a visit...")
+            print ("")
+            m ()
+            break
+        elif t == 2:
+            print ("Philadelphia Orchestra's concert is pretty good. You enjoy it a lot. And you like the principal cello's performance.")
+            print ("")
+            print ("What a coincidence! Pierre Fournier, the principal cello player is the same guy who sent you a letter...")
+            print ("")
+            print ("He doesn't care much about your rejection from yesterday...you make friend with him and he helps you improve throughout the years.")
+            print ("")
+            print ("*Many years later, you go back to Curtis for a visit...")
+            print ("")
+            m ()
+            break
+
+
+            
+def letter ():          #a new function for "piece == 1"
+    while True:
+        letter = inputNumber ("Are you going to read the letter? 1-yes; 2-no: ")
+        print ("")
+        if letter == 1:
+            print ("It's a letter from Pierre Fournier, the principal cello of Philadelphia Orchestra would like you to come to their masterpiece.")
+            print ("")
+            choose ()
+            sys.exit()
+           
+        elif letter == 2:
+            print ("You choose to ignore the letter. Everything seems fine, you go home and sleep early that night.")
+            print ("")
+            t()
+            sys.exit()
+
+def trioMusic ():           #a new function for "afterShow == 1"
+    while True:
+        trioMusic = inputNumber ("Brian asks you to play Piano Trio in D major, Op.70 No.1. Would you like to come? 1-yes; 2-no: ")
+        print ("")
+        if trioMusic == 1:
+            print ("After performing the piano trio with Brian and another guy, you received a mail from someone...")
+            print ("")
+            print ("Hilary Hahn, an American violinist likes your music and would like to meet you in person...")
+            print ("")
+            print ("*A few years after working with Hahn, you become one of the best Music Alumnis of Curtis Institute.")
+            print ("")
+            print ("Good game! It's a cool way to end your game,",name," .")
+            break
+        if trioMusic == 2:
+            print ("Umm...maybe you are not ready to play Beethoven's 'Ghost Trio'...")
+            print ("")
+            print ("You are not the best at trying new music, but you have to choose four works from one composer to play for you exams...")
+            print ("")
+            print ("You might want to think over your choice for choosing major in performance,",name,"...")
+            print ("")
+            print ("What can you do if you can't play the famous Piano Trio in D major, Op.70 No.1!")
+            print ("")
+            print ("Game over :( ")
+            break
+
+def a ():           #a new function for "piece == 3"
+    print ("Nonet, Op.10 is a challenging and beautiful piece to play for chamber, but it is challenging as well.")
+    print ("")
+    print ("Your professor wants you to go to the Rock Resource Center for inspiration.")
+    print ("")
+    while True:
+        a = inputNumber ("Are you going to spend your time at: 1-John de Lancie Library; 2-Audio Visual Media; 3-Seminar Room: ")
+        print ("")
+        if a == 1:
+            print ("The library contains over 100,000 volumes of music scores and books. Good for you!")
+            print ("")
+            s (PlHp, Plattack, EnHp, Enattack)          #()includes the variables being used in my function
+            break
+        elif a == 2:
+            print ("Good for you! Listening to the same piece repetitively helps you with further understanding.")
+            print ("")
+            print ("You choose to have a walk in the library for a break after a few hours of audio study.")
+            print ("")
+            s (PlHp, Plattack, EnHp, Enattack)
+            break
+        elif a == 3:
+            print ("Seminar room offers you a place to hang out and relax. We can't say you are a lazy bone but here you go!")
+            print ("")
+            print ("You are exhausted after hanging out with a bunch of art students. You choose to take a nap in the library.")
+            print ("")
+            s (PlHp, Plattack, EnHp, Enattack)
+            break
+
+            
+#---------setting for player and enemy---------------------
+Plattack = 6
+PlHp = 18
+EnHp = 20
+Enattack = 4
+#---------display your stats-------------------------------
+def stats (PlHp, EnHp):
+    print ("Your Hp:",PlHp)
+    print ("Ghost Hp:", EnHp)
+
+
+
+def s (PlHp, Plattack, EnHp, Enattack):           #a new function for "a == 1"
+    print ("You study Vladimir's music hard at a table for the whole afternoon and fall asleep...you wake up at 11:00 p.m.")
+    print ("")
+    print ("No one is around here, and you can only see a little bit of candle light beyond the bookshelves in front of you...")
+    print ("")
+    print ("You choose to check the candle light...")
+    print ("")
+    print ("The candle light is gone in a flash as you get up from your seat. The light bulbs ignite and explode.")
+    print ("")
+    while True:
+        st = inputNumber ("Something behind you makes a scratchy sound...You will: 1-turn around and check on the sound; 2-run: ")
+        print ("")
+        if st == 1:
+            print ("You see a rusted bronze music box on the ground...you opened it out of curiosity...")
+            print ("")
+            print ("A ghostly figure, a woman, rises out of the box. She cries, 'Anna Kolossova'!")
+            print ("")
+            print ("After reading about Vladimir, you realize that 'Anna Kolossova' is an unfinished opera composed by Vladimir in 1939.")
+            print ("")
+            
+            while EnHp>0:
+
+                g = inputNumber ("Are you going to: 1-run; 2-sing a random work composed by Vladimir Shcherbachov: ")
+                if g == 1 :
+                    print ("Oops, you are attacked!")
+                    print ("")
+                    PlHp = PlHp-Enattack
+                    stats (PlHp, EnHp)
+
+                elif g == 2:
+                    print ("You are fighting the ghost!")
+                    print ("")
+                    EnHp = EnHp-Plattack
+                    PlHp = PlHp-Enattack
+                    stats (PlHp, EnHp)
+
+                if PlHp <= 0:
+                    print ("You died இдஇ ")
+                    print ("")
+                    print ("Your soul is sealed in the little music box, singing 'Anna Kolossova' again and again.")
+                    sys.exit()
+                    
+
+                if EnHp <= 0:
+                    print ("You beat the ghost from the music box. For a second, you think you are free.")
+                    print ("")
+                    print ("*You wake up in the library again - you look around and your watch tells you it's 11:00 p.m....")
+                    print ("")
+                    print ("(☍﹏⁰)")
+                    sys.exit()
+
+        elif st == 2:
+            print ("You run immediately from the ghost...unfortunately, you are captured into the music box.")
+            print ("")
+            print ("*You wake up in the library again - you look around and your watch tells you it's 11:00 p.m....")
+            print ("")
+            print ("╥﹏╥")
+            sys.exit()
+
+
+                      
+while True:         #first loop to start the game - choose different instruments to have different stats
+    instrument = inputNumber ("Please choose your instrument: 1-piano;2-violin;3-clarinet: ")
+    time.sleep(.5)
+    print ("")
+    if instrument == 1:
+        print ("Your stats: sight reading:6/10, patience:8/10, talent:7/10, evolution:6/10.")
+        print ("")
+        time.sleep(.5)
+        break
+    elif instrument == 2:
+        print ("Your stats: sight reading:7/10, patience:4/10, talent:9/10, evolution:8/10.")
+        print ("")
+        time.sleep(.5)
+        break
+    elif instrument == 3:
+        print ("Your stats: sight reading:9/10, patience:2/10, talent:8/10, evolution:7/10.")
+        print ("")
+        time.sleep(.5)
+        break
+    
+print ("As a first year student, enjoy a fabulous musical year!")
+print ("")
+
+while True:
+    choice = inputNumber ("Would you like to: 1-play at the chamber concert; 2-have more practices; 3-sign up for the youth artist competition: ")
+    print ("")
+    if choice == 1:
+        print ("Thank you for signing up for the chamber concert,",name,".What piece would you like to perform?")
+        print ("")
+        while True:
+            piece = inputNumber ("Pieces allowed for chamber concert are: 1-Ballade of the Existence, Op.20; 2-Heroic Variations; 3-Nonet, Op.10: ")
+            print ("")
+            if piece == 1:
+                print ("Beautiful piece for a trio! You have done a great job with the group,",name,". You received a letter from a secret admirer.")
+                print ("")
+                letter ()
+                sys.exit ()
+            elif piece == 2:
+                print ("A great work by Beethoven that is! You feel great after the concert. Brian from your chamber group would like to offer you a drink.")
+                print ("")
+                while True:
+                    afterShow = inputNumber ("Are you coming? 1-yes; 2-no: ")
+                    print ("")
+                    if afterShow == 1:
+                        print ("You hang out with Brian and talk about other works composed by Beethoven...")
+                        print ("")
+                        trioMusic ()
+                        sys.exit ()
+                    elif afterShow == 2:
+                        print ("")
+                        print ("It's okay if you don't hang out with the group. You enjoy practicing for the future concerts and competitions.")
+                        print ("")
+                        print ("You choose to work hard for the rest of your bachelor's degree...and you try to become the alumni by doing solo recitals.")
+                        print ("")
+                        print ("*You are welcomed to stay for master's in Curtis Institute...good game!")
+                        sys.exit ()
+            elif piece == 3:
+                a ()
+                sys.exit ()
+                 
+    elif choice == 2:
+        print ("It's not bad to practice and enjoy your time,",name,",but Curtis Institute of Music would like you to live actively :(")
+        print ("")
+        print ("*A dark and cold night...when the majority is enjoying the Piano Soloist Performance...")
+        print ("")
+        print ("You are busking in front of Philadelphia Theater...you met Gary Graffman, the director of Curtis Institute and offended him badly...")
+        print ("")
+        print ("Unfortunately you have to leave the Institute because of the unpleasantness between you and the 'Big Ones'.")
+        print ("")
+        print ("*After a while, you decide to visit Beijing for a change of mood.")
+        BJ ()
+        break
+
+    elif choice == 3:
+        print ("It's good for you to compete! What would your music selection be?")
+        print ("")
+        c()
+        break
